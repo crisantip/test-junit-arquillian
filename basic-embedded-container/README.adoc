@@ -1,0 +1,7 @@
+=== Arquillian con un contenedor embarcado (embedded)
+
+==== Ejecución
+> Desde una terminal, usar el comando: `mvn clean verify` 
+> Desde eclipse, clic derecho, Run As > Run Configuration > JUnit > Arguments, en los argumentos de la JVM agregar -Djava.util.logging.manager=org.jboss.logmanager.LogManager
+
+El contenedor reside en la misma JVM y su ciclo de vida (startup/shutdown) es manejado por Arquillian.

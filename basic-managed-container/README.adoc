@@ -1,0 +1,9 @@
+=== Arquillian con un contenedor Wildfly administrado (managed)
+
+==== Ejecución
+
+1. Escribir la ruta (path) de  la instancia del Jboss (WildFly 10) en el archivo arquillian.xml
+2. Desde una terminal, usar el comando: `mvn clean verify` o ejecutar las pruebas como JUnit test en el IDE (eclipse);
+   no es necesario agregar la variable java.util.logging.manager.
+
+El contenedor reside en una JVM separada y su ciclo de vida (startup/shutdown) es manejado por Arquillian.
