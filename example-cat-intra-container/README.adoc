@@ -1,0 +1,18 @@
+=== Arquillian con un contenedor Wildfly remoto (remote)
+
+==== Ejecución
+
+1. Iniciar la instancia (Jboss 7 o Wildfly 10)
+2. Desde una terminal, usar el comando: `mvn clean verify` o ejecutar las pruebas como JUnit test en el IDE (eclipse);
+   no es necesario agregar la variable java.util.logging.manager.
+   Se puede ejecutar las pruebas muchas veces sin necesidad de detener el contenedor remoto.
+3. Detener el contenedor (instancia)
+
+El contenedor reside en una JVM separada y su ciclo de vida (startup/shutdown) es manejado por el usuario. Arquillian solamente se enlaza al contenedor para deployar el artefacto y ejecutar las pruebas por medio de un protocolo remoto; al finalizar las pruebas el artefacto es undeployed.
+
+NOTA: Al no incluir en src/test/resources el archivo arquillian.xml se toman los valores por default:
+	managementAddress = 127.0.0.1
+	managementPort = 9990
+	username = null
+	password = null
+Al tener una instancia levantada con valores diferentes se debe modificar en el arquillian.xml 

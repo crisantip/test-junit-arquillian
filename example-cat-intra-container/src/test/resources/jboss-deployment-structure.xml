@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+	<ear-subdeployments-isolated>true</ear-subdeployments-isolated> 
+	<deployment>
+		<dependencies>
+			<module name="deployment.sri-adm-catalogo-generico.ear" export="true" />
+			<module name="deployment.registro-civil-info.jar" export="true" />
+			<module name="deployment.sri-cliente-entidad-externa.jar" export="true" />
+			<module name="deployment.ruc.jar" export="true" />
+			<module name="deployment.adm.jar" export="true" />
+			<module name="deployment.genParametroAmbiente.jar" export="true" />					
+			<module name="deployment.genMensajes-app.ear.genMensajes-core.jar" export="true" />
+			<module name="deployment.sri-adm-menu-generico.jar" export="true" />
+		</dependencies>
+	</deployment>
+</jboss-deployment-structure>   
