@@ -10,7 +10,6 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.logging.Logger;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.exporter.ZipExporter;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.ConfigurableMavenResolverSystem;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
@@ -32,7 +31,7 @@ public class ParametroBeanTest {
 	
 	@Inject
 	RequisitoBean requisitoBean;
-
+	
 	@Deployment
 	public static Archive<?> deploy() {
 		
@@ -48,10 +47,6 @@ public class ParametroBeanTest {
 				.addAsLibraries(getLibraries("ec.gob.sri.catastro-tributario:sri-catastro-tributario-cliente"))
 				.addAsLibraries(getLibraries("ec.gob.sri:sri-seguridad-intranet"))
 				.addAsWebInfResource("jboss-deployment-structure.xml", "jboss-deployment-structure.xml");
-				//.addAsResource("test-persistence.xml", "META-INF/persistence.xml");
-
-		testArchive.as(ZipExporter.class).exportTo(new File("D:/tmp/test.war"), true);
-
 		return testArchive;
 	}
 	
